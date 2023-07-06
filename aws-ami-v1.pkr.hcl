@@ -13,8 +13,8 @@ packer {
 
 # which ami to use as the base and where to save it
 source "amazon-ebs" "amazon-linux" {
-  access_key = var.aws_access_key
-  secret_key = var.aws_secret_key
+  access_key      = "AKIATZYTGVT5HKZGJCFS"
+  secret_key      = "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"
   region          = "ap-southeast-2"
   ami_name        = "ami-version-1.0.1-{{timestamp}}"
   instance_type   = "t2.micro"
