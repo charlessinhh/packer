@@ -12,7 +12,7 @@ packer {
 }
 
 # which ami to use as the base and where to save it
-source "amazon-ebs" "amazon-linux" {
+source "amazon-ebs" "amazon-linux-jenkins" {
   access_key      = ""
   secret_key      = ""
   region          = "ap-south-1"
@@ -30,7 +30,7 @@ source "amazon-ebs" "amazon-linux" {
 build {
   name = "hq-packer"
   sources = [
-    "source.amazon-ebs.amazon-linux"
+    "source.amazon-ebs.amazon-linux-jenkins"
   ]
 
   provisioner "file" {
