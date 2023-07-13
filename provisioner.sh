@@ -6,6 +6,14 @@ sudo yum -y update
 # install git
 sudo yum install git
 
+# install docker
+sudo yum -y install docker
+sudo service docker start
+sudo usermod -a -G docker ec2-user
+# docker service auto start
+sudo systemctl enable docker.service
+sudo systemctl start docker.service
+
 # install SSM
 sudo yum install https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm
 #sudo systemctl start amazon-ssm-agent
