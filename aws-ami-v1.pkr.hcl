@@ -55,6 +55,6 @@ build {
   }
 
   provisioner "shell" {
-    script = "/tmp/provisioner.sh"
+    inline = ["/bin/bash -x /tmp/provisioner.sh"]
   }
 }
