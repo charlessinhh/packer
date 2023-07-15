@@ -38,6 +38,10 @@ build {
   destination = "/tmp/provisioner.sh"
 }
 
+provisioner "shell" {
+    inline = [ "ls -la /tmp"]
+  }
+
   provisioner "shell" {
     inline = ["chmod a+x /tmp/provisioner.sh"]
   }
