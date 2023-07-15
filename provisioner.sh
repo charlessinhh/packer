@@ -9,6 +9,7 @@ sudo git --version
 
 #install nginx
 sudo yum install nginx -y
+sudo systemctl start nginx  
 #start nginx auto
 sudo systemctl enable nginx
 sudo systemctl restart nginx
