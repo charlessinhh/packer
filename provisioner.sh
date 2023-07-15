@@ -5,6 +5,7 @@ sudo yum -y update
 
 # install git
 sudo yum install git
+sudo git --version
 
 # install docker
 sudo yum -y install docker
