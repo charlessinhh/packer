@@ -8,7 +8,6 @@ sudo yum install git -y
 sudo git --version
 
 #install nginx
-sudo yum update -y
 sudo yum install nginx -y
 #start nginx auto
 sudo systemctl enable nginx
@@ -37,4 +36,6 @@ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -m ec2 -a 
 # install AWS inspector
 curl -O https://inspector-agent.amazonaws.com/linux/latest/install
 sudo bash install
+
+sudo yum update -y
 
