@@ -33,29 +33,13 @@ build {
     "source.amazon-ebs.amazon-linux-jenkins"
   ]
 
-  #source path changes in jenkins due to git clone to jenkins project repo
-  provisioner "file" {
-  source = "/var/lib/jenkins/workspace/ami-build/provisioner.sh"
-  destination = "/tmp/provisioner.sh"
-}
-
   provisioner "shell" {
-    inline = ["chmod a+x /tmp/provisioner.sh"]
-  }
-  
-  provisioner "shell" {
-    inline = [ "ls -la /tmp"]
-  }
-  
-    provisioner "shell" {
-    inline = [ "pwd"]
-  }
-  
-  provisioner "shell" {
-    inline = [ "cat /tmp/provisioner.sh"]
+    inline = ["echo provisioning all the things",
+              "chmod a+x /var/lib/jenkins/workspace/ami-build/provisioner.sh"]
   }
 
   provisioner "shell" {
-    inline = ["/bin/bash -x /tmp/provisioner.sh"]
+    inline = ["echo provisioning all the things",
+              "/bin/bash -x /var/lib/jenkins/workspace/ami-build/provisioner.sh"]
   }
 }
