@@ -34,26 +34,11 @@ build {
   ]
 
   provisioner "file" {
-  source = "provisioner.sh"
+  source = "/home/ubuntu/packer/provisioner.sh"
   destination = "/tmp/provisioner.sh"
 }
-  provisioner "shell" {
-    inline = ["chmod a+x /tmp/provisioner.sh"]
-  }
-  
-  provisioner "shell" {
-    inline = [ "ls -la /tmp"]
-  }
-  
-    provisioner "shell" {
-    inline = [ "pwd"]
-  }
-  
-  provisioner "shell" {
-    inline = [ "cat /tmp/provisioner.sh"]
-  }
 
   provisioner "shell" {
-    inline = ["/bin/bash -x /tmp/provisioner.sh"]
+    script = "/home/ubuntu/packer/provisioner.sh"
   }
 }
