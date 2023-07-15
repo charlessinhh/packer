@@ -10,6 +10,7 @@ pipeline {
             steps {
                 git branch: 'main', changelog: false, poll: false, url: 'https://github.com/charlessinhh/packer.git'
                 echo "github repository cloned"  
+                echo "github repository cloned" 
                 
             }
         }
