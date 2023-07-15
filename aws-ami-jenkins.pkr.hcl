@@ -12,7 +12,7 @@ packer {
 }
 
 # which ami to use as the base and where to save it
-source "amazon-ebs" "amazon-linux-a" {
+source "amazon-ebs" "amazon-linux-jenkins" {
   access_key      = ""
   secret_key      = ""
   region          = "ap-south-1"
@@ -30,7 +30,7 @@ source "amazon-ebs" "amazon-linux-a" {
 build {
   name = "hq-packer"
   sources = [
-    "source.amazon-ebs.amazon-linux-a"
+    "source.amazon-ebs.amazon-linux-jenkins"
   ]
 
   #source path changes in jenkins due to git clone to jenkins project repo
