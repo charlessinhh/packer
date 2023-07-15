@@ -33,13 +33,27 @@ build {
     "source.amazon-ebs.amazon-linux-jenkins"
   ]
 
+  provisioner "file" {
+  source = "packer/provisioner.sh"
+  destination = "/tmp/provisioner.sh"
+}
   provisioner "shell" {
-    inline = ["echo provisioning all the things",
-              "chmod a+x /var/lib/jenkins/workspace/ami-build/provisioner.sh"]
+    inline = ["chmod a+x /tmp/provisioner.sh"]
+  }
+  
+  provisioner "shell" {
+    inline = [ "ls -la /tmp"]
+  }
+  
+    provisioner "shell" {
+    inline = [ "pwd"]
+  }
+  
+  provisioner "shell" {
+    inline = [ "cat /tmp/provisioner.sh"]
   }
 
   provisioner "shell" {
-    inline = ["echo provisioning all the things",
-              "/bin/bash -x /var/lib/jenkins/workspace/ami-build/provisioner.sh"]
+    inline = ["/bin/bash -x /tmp/provisioner.sh"]
   }
 }
