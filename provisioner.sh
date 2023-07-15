@@ -4,8 +4,18 @@
 sudo yum -y update
 
 # install git
-sudo yum install git
+sudo yum install git -y
 sudo git --version
+
+#install nginx
+sudo yum update -y
+sudo yum install nginx -y
+#start nginx auto
+sudo systemctl enable nginx
+sudo systemctl restart nginx
+sudo systemctl status nginx
+
+
 
 # install docker
 sudo yum -y install docker
