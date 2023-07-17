@@ -25,7 +25,7 @@ pipeline {
                     ]
                 ]){
                     echo "packer build "
-                    // sh "pwd"
+                    sh "pwd"
                     sh "packer init ."
                     sh "packer build ."
                     echo "ami created "
