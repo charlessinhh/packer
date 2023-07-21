@@ -7,6 +7,20 @@ sudo yum -y update
 sudo yum install git -y
 sudo git --version
 
+#Download jenkins pkg
+sudo yum update –y
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+sudo yum upgrade
+#install java
+sudo amazon-linux-extras install java-openjdk11 -y
+#install jenkins
+sudo yum install jenkins -y
+#jenkins service auto start
+sudo systemctl enable jenkins
+sudo systemctl start jenkins
+sudo systemctl status jenkins
+
 #install nginx
 sudo amazon-linux-extras install nginx1 -y
 sudo systemctl start nginx  
