@@ -6,14 +6,7 @@ pipeline {
                 sh "packer --version"
             }
         }
-        stage("clone repo") {
-            steps {
-                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/charlessinhh/packer.git'
-                echo "github repository cloned"  
-                echo "github repository cloned" 
-                
-            }
-        }
+
         stage("packer build"){
             steps{
                 withCredentials([
@@ -26,8 +19,8 @@ pipeline {
                 ]){
                     echo "packer build "
                     sh "pwd"
-                    sh "packer init ."
-                    sh "packer build ."
+                    sh "packer init aws-ami-jenkins.pkr.hcl"
+                    sh "packer build aws-ami-jenkins.pkr.hcl"
                     echo "ami created "
                 }
             }
