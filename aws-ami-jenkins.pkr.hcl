@@ -34,11 +34,11 @@ build {
   ]
 
   provisioner "file" {
-  source = "/home/ubuntu/packer/provisioner.sh"
+  source = "provisioner.sh"
   destination = "/tmp/provisioner.sh"
 }
 
   provisioner "shell" {
-    script = "/home/ubuntu/packer/provisioner.sh"
+    script = "provisioner.sh"
   }
 }
