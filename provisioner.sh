@@ -20,8 +20,7 @@ sudo yum install jenkins -y
 sudo systemctl enable jenkins
 sudo systemctl start jenkins
 sudo systemctl status jenkins
-#docker permission for jenkins
-sudo usermod -a -G docker jenkins
+
 
 #install nginx
 sudo amazon-linux-extras install nginx1 -y
@@ -37,6 +36,8 @@ sudo systemctl status nginx
 sudo yum -y install docker
 sudo service docker start
 sudo usermod -a -G docker ec2-user
+#docker permission for jenkins user 
+sudo usermod -a -G docker jenkins
 # docker service auto start
 sudo systemctl enable docker.service
 sudo systemctl start docker.service
