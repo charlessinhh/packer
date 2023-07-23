@@ -33,6 +33,7 @@ sudo systemctl status nginx
 
 
 # install docker
+sudo yum -y update
 sudo yum -y install docker
 sudo service docker start
 sudo usermod -a -G docker ec2-user
